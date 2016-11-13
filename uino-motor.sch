@@ -4935,15 +4935,15 @@ IC-09363</description>
 <part name="U2" library="74LV" deviceset="SN74LVC1G97" device="DBV" value="74*1G57"/>
 <part name="GND2" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY2" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
-<part name="R1" library="rc-master-smd" deviceset="R_" device="0805MP"/>
+<part name="R1" library="rc-master-smd" deviceset="R_" device="0805MP" value="100k"/>
 <part name="SUPPLY3" library="SparkFun-Aesthetics" deviceset="VCC" device=""/>
 <part name="Q1" library="transistor-fet" deviceset="SI2307CDS" device="" value="P-FET"/>
 <part name="D1" library="diode" deviceset="BZX384*" device="" value="6.2V"/>
-<part name="R2" library="rc-master-smd" deviceset="R_" device="0805MP"/>
+<part name="R2" library="rc-master-smd" deviceset="R_" device="0805MP" value="100k"/>
 <part name="GND5" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="SUPPLY6" library="SparkFun-Aesthetics" deviceset="VDD" device="" value="VM"/>
-<part name="C1" library="rc-master-smd" deviceset="C_" device="0805MP"/>
-<part name="C2" library="rc-master-smd" deviceset="C_" device="0805MP"/>
+<part name="C1" library="rc-master-smd" deviceset="C_" device="0805MP" value="10u"/>
+<part name="C2" library="rc-master-smd" deviceset="C_" device="0805MP" value="10u"/>
 <part name="GND6" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND7" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND4" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -4959,16 +4959,16 @@ IC-09363</description>
 <part name="JP1" library="jumpers" deviceset="SJ-" device="035" value="SJ-035"/>
 <part name="SUPPLY7" library="SparkFun-Aesthetics" deviceset="VDD" device="" value="VM"/>
 <part name="JP10" library="jumpers" deviceset="SJ-" device="035" value="SJ-035"/>
-<part name="C3" library="rc-master-smd" deviceset="C_" device="0805MP"/>
+<part name="C3" library="rc-master-smd" deviceset="C_" device="0805MP" value="10u"/>
 <part name="GND11" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="U$1" library="SparkFun-PowerIC" deviceset="TB6612FNG" device="" value="TB6612FNG"/>
-<part name="C4" library="rc-master-smd" deviceset="C_" device="0805MP"/>
+<part name="U3" library="SparkFun-PowerIC" deviceset="TB6612FNG" device="" value="TB6612FNG"/>
+<part name="C4" library="rc-master-smd" deviceset="C_" device="0805MP" value="10y"/>
 <part name="GND12" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="R3" library="rc-master-smd" deviceset="R_" device="0805MP"/>
+<part name="R3" library="rc-master-smd" deviceset="R_" device="0805MP" value="100k"/>
 <part name="GND13" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="R4" library="rc-master-smd" deviceset="R_" device="0805MP"/>
+<part name="R4" library="rc-master-smd" deviceset="R_" device="0805MP" value="100k"/>
 <part name="GND14" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="R5" library="rc-master-smd" deviceset="R_" device="0805MP"/>
+<part name="R5" library="rc-master-smd" deviceset="R_" device="0805MP" value="100k"/>
 <part name="GND15" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="F1" library="adi-misc" deviceset="FUSE_PTC" device="-TH"/>
 </parts>
@@ -4979,6 +4979,9 @@ IC-09363</description>
 IN1, IN2, PWM, STBY
 have internal 200k
 pull-down resistors.</text>
+<text x="88.9" y="149.86" size="3.81" layer="94" ratio="18">*uino-motor</text>
+<text x="88.9" y="145.796" size="2.1844" layer="94" ratio="12">v0.1 2016/11/12</text>
+<text x="88.9" y="141.986" size="2.1844" layer="94" ratio="12">by Adi Linden</text>
 </plain>
 <instances>
 <instance part="J4" gate="G$1" x="195.58" y="139.7" rot="R180"/>
@@ -5029,7 +5032,10 @@ pull-down resistors.</text>
 <instance part="JP10" gate="G$1" x="157.48" y="53.34"/>
 <instance part="C3" gate="G$1" x="60.96" y="58.42" rot="R90"/>
 <instance part="GND11" gate="1" x="60.96" y="50.8"/>
-<instance part="U$1" gate="G$1" x="101.6" y="73.66" rot="MR0"/>
+<instance part="U3" gate="G$1" x="101.6" y="73.66" smashed="yes" rot="MR0">
+<attribute name="NAME" x="114.3" y="89.408" size="1.778" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="114.3" y="53.34" size="1.778" layer="96" rot="MR0"/>
+</instance>
 <instance part="C4" gate="G$1" x="58.42" y="139.7" rot="R90"/>
 <instance part="GND12" gate="1" x="58.42" y="124.46"/>
 <instance part="R3" gate="G$1" x="99.06" y="116.84" rot="R90"/>
@@ -5136,26 +5142,26 @@ pull-down resistors.</text>
 <wire x1="60.96" y1="55.88" x2="60.96" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="GND"/>
+<pinref part="U3" gate="G$1" pin="GND"/>
 <pinref part="GND3" gate="1" pin="GND"/>
 <wire x1="86.36" y1="71.12" x2="83.82" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="71.12" x2="83.82" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="PGND1@3"/>
+<pinref part="U3" gate="G$1" pin="PGND1@3"/>
 <pinref part="GND8" gate="1" pin="GND"/>
 <wire x1="119.38" y1="81.28" x2="121.92" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="121.92" y1="81.28" x2="121.92" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="PGND2@10"/>
+<pinref part="U3" gate="G$1" pin="PGND2@10"/>
 <wire x1="121.92" y1="78.74" x2="121.92" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="121.92" y1="66.04" x2="121.92" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="121.92" y1="63.5" x2="121.92" y2="53.34" width="0.1524" layer="91"/>
 <wire x1="119.38" y1="63.5" x2="121.92" y2="63.5" width="0.1524" layer="91"/>
 <junction x="121.92" y="63.5"/>
-<pinref part="U$1" gate="G$1" pin="PGND2@9"/>
+<pinref part="U3" gate="G$1" pin="PGND2@9"/>
 <wire x1="119.38" y1="66.04" x2="121.92" y2="66.04" width="0.1524" layer="91"/>
 <junction x="121.92" y="66.04"/>
-<pinref part="U$1" gate="G$1" pin="PGND1@4"/>
+<pinref part="U3" gate="G$1" pin="PGND1@4"/>
 <wire x1="119.38" y1="78.74" x2="121.92" y2="78.74" width="0.1524" layer="91"/>
 <junction x="121.92" y="78.74"/>
 </segment>
@@ -5401,7 +5407,7 @@ pull-down resistors.</text>
 <junction x="152.4" y="114.3"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="VCC"/>
+<pinref part="U3" gate="G$1" pin="VCC"/>
 <pinref part="SUPPLY5" gate="G$1" pin="VCC"/>
 <wire x1="86.36" y1="76.2" x2="83.82" y2="76.2" width="0.1524" layer="91"/>
 <wire x1="83.82" y1="76.2" x2="83.82" y2="91.44" width="0.1524" layer="91"/>
@@ -5415,16 +5421,16 @@ pull-down resistors.</text>
 <wire x1="152.4" y1="127" x2="152.4" y2="129.54" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="VM2"/>
+<pinref part="U3" gate="G$1" pin="VM2"/>
 <pinref part="SUPPLY4" gate="VDD" pin="VDD"/>
 <wire x1="86.36" y1="58.42" x2="78.74" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="78.74" y1="58.42" x2="78.74" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="VM3"/>
+<pinref part="U3" gate="G$1" pin="VM3"/>
 <wire x1="78.74" y1="60.96" x2="78.74" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="78.74" y1="86.36" x2="78.74" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="86.36" y1="60.96" x2="78.74" y2="60.96" width="0.1524" layer="91"/>
 <junction x="78.74" y="60.96"/>
-<pinref part="U$1" gate="G$1" pin="VM1"/>
+<pinref part="U3" gate="G$1" pin="VM1"/>
 <wire x1="86.36" y1="86.36" x2="78.74" y2="86.36" width="0.1524" layer="91"/>
 <junction x="78.74" y="86.36"/>
 </segment>
@@ -5457,7 +5463,7 @@ pull-down resistors.</text>
 <label x="48.26" y="63.5" size="1.778" layer="95" rot="MR0"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="BIN2"/>
+<pinref part="U3" gate="G$1" pin="BIN2"/>
 <wire x1="86.36" y1="66.04" x2="68.58" y2="66.04" width="0.1524" layer="91"/>
 <label x="68.58" y="66.04" size="1.778" layer="95"/>
 </segment>
@@ -5533,7 +5539,7 @@ pull-down resistors.</text>
 <label x="144.78" y="91.44" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="AIN2"/>
+<pinref part="U3" gate="G$1" pin="AIN2"/>
 <wire x1="86.36" y1="81.28" x2="68.58" y2="81.28" width="0.1524" layer="91"/>
 <label x="68.58" y="81.28" size="1.778" layer="95"/>
 </segment>
@@ -5550,7 +5556,7 @@ pull-down resistors.</text>
 <label x="144.78" y="68.58" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="BIN1"/>
+<pinref part="U3" gate="G$1" pin="BIN1"/>
 <wire x1="86.36" y1="68.58" x2="68.58" y2="68.58" width="0.1524" layer="91"/>
 <label x="68.58" y="68.58" size="1.778" layer="95"/>
 </segment>
@@ -5562,7 +5568,7 @@ pull-down resistors.</text>
 <label x="144.78" y="99.06" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="PWMA"/>
+<pinref part="U3" gate="G$1" pin="PWMA"/>
 <wire x1="86.36" y1="83.82" x2="68.58" y2="83.82" width="0.1524" layer="91"/>
 <label x="68.58" y="83.82" size="1.778" layer="95"/>
 </segment>
@@ -5574,7 +5580,7 @@ pull-down resistors.</text>
 <label x="144.78" y="60.96" size="1.778" layer="95"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="PWMB"/>
+<pinref part="U3" gate="G$1" pin="PWMB"/>
 <wire x1="86.36" y1="63.5" x2="68.58" y2="63.5" width="0.1524" layer="91"/>
 <label x="68.58" y="63.5" size="1.778" layer="95"/>
 </segment>
@@ -5594,56 +5600,56 @@ pull-down resistors.</text>
 <net name="N$1" class="0">
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
-<pinref part="U$1" gate="G$1" pin="STBY"/>
+<pinref part="U3" gate="G$1" pin="STBY"/>
 <wire x1="76.2" y1="73.66" x2="86.36" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="A01" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="A01@1"/>
+<pinref part="U3" gate="G$1" pin="A01@1"/>
 <wire x1="119.38" y1="86.36" x2="127" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="127" y1="86.36" x2="127" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="J2" gate="CON" pin="2"/>
 <wire x1="127" y1="83.82" x2="132.08" y2="83.82" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="A01@2"/>
+<pinref part="U3" gate="G$1" pin="A01@2"/>
 <wire x1="119.38" y1="83.82" x2="127" y2="83.82" width="0.1524" layer="91"/>
 <junction x="127" y="83.82"/>
 </segment>
 </net>
 <net name="B01" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="B01@12"/>
+<pinref part="U3" gate="G$1" pin="B01@12"/>
 <wire x1="119.38" y1="58.42" x2="127" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="127" y1="58.42" x2="127" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="J3" gate="CON" pin="1"/>
 <wire x1="127" y1="60.96" x2="132.08" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="B01@11"/>
+<pinref part="U3" gate="G$1" pin="B01@11"/>
 <wire x1="119.38" y1="60.96" x2="127" y2="60.96" width="0.1524" layer="91"/>
 <junction x="127" y="60.96"/>
 </segment>
 </net>
 <net name="A02" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="A02@6"/>
+<pinref part="U3" gate="G$1" pin="A02@6"/>
 <wire x1="119.38" y1="73.66" x2="127" y2="73.66" width="0.1524" layer="91"/>
 <wire x1="127" y1="73.66" x2="127" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="J2" gate="CON" pin="1"/>
 <wire x1="127" y1="76.2" x2="127" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="127" y1="81.28" x2="132.08" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="A02@5"/>
+<pinref part="U3" gate="G$1" pin="A02@5"/>
 <wire x1="119.38" y1="76.2" x2="127" y2="76.2" width="0.1524" layer="91"/>
 <junction x="127" y="76.2"/>
 </segment>
 </net>
 <net name="B02" class="0">
 <segment>
-<pinref part="U$1" gate="G$1" pin="B02@7"/>
+<pinref part="U3" gate="G$1" pin="B02@7"/>
 <wire x1="119.38" y1="71.12" x2="127" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="127" y1="71.12" x2="127" y2="68.58" width="0.1524" layer="91"/>
 <pinref part="J3" gate="CON" pin="2"/>
 <wire x1="127" y1="68.58" x2="127" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="127" y1="63.5" x2="132.08" y2="63.5" width="0.1524" layer="91"/>
-<pinref part="U$1" gate="G$1" pin="B02@8"/>
+<pinref part="U3" gate="G$1" pin="B02@8"/>
 <wire x1="119.38" y1="68.58" x2="127" y2="68.58" width="0.1524" layer="91"/>
 <junction x="127" y="68.58"/>
 </segment>
@@ -5655,7 +5661,7 @@ pull-down resistors.</text>
 <label x="48.26" y="99.06" size="1.778" layer="95" rot="MR0"/>
 </segment>
 <segment>
-<pinref part="U$1" gate="G$1" pin="AIN1"/>
+<pinref part="U3" gate="G$1" pin="AIN1"/>
 <wire x1="86.36" y1="78.74" x2="68.58" y2="78.74" width="0.1524" layer="91"/>
 <label x="68.58" y="78.74" size="1.778" layer="95"/>
 </segment>
